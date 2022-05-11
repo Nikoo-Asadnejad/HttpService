@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bWy1UGT+p6hiT7nK8ylxF74hGCM9JZ81OWQpSAYLSJCBhgv7Y9sRI8TH3EkcdKUke5cuPSpdk5SMTiIseNiepw==",
+  "success": true,
+  "projectFilePath": "D:\\web development\\projects\\HttpService\\HttpService\\HttpService\\HttpService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
