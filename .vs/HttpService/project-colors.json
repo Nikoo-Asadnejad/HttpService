@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "33f8a866-55e6-42bd-be7e-39794a34f13b": {
+      "ProjectGuid": "33f8a866-55e6-42bd-be7e-39794a34f13b",
+      "DisplayName": "HttpService",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
