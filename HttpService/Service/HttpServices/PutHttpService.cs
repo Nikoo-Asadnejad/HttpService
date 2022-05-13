@@ -8,11 +8,19 @@ using System.Threading.Tasks;
 
 namespace HttpService.Service
 {
-  //Put
+  //The HttpService Put Methods
   public partial class HttpService  : IHttpService
   {
 
-
+    /// <summary>
+    ///  Send Put request and serialize the api response model to T
+    /// </summary>
+    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model of T</returns>
     public async Task<ResponseModel<T>> PutAsync<T>(string url, object model,
       Dictionary<string, string>? query = null, Dictionary<string, string>? headers = null)
     {
@@ -23,6 +31,15 @@ namespace HttpService.Service
       return requestResponse;
     }
 
+    /// <summary>
+    ///  Send Put request and serialize the api response model to T
+    /// </summary>
+    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model of T</returns>
     public async Task<ResponseModel<T>> PutAsync<T>(string url, object model, string query,
       Dictionary<string, string>? headers = null)
     {
@@ -32,7 +49,14 @@ namespace HttpService.Service
       ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
     }
-
+    /// <summary>
+    ///  Send Put request
+    /// </summary>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response</returns>
     public async Task<ResponseModel<object>> PutAsync(string url, object model,
       Dictionary<string, string>? query = null, Dictionary<string, string>? headers = null)
     {
@@ -43,6 +67,14 @@ namespace HttpService.Service
       return requestResponse;
     }
 
+    /// <summary>
+    ///  Send Put request
+    /// </summary>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response</returns>
     public async Task<ResponseModel<object>> PutAsync(string url, object model, string query,
       Dictionary<string, string>? headers = null)
     {
@@ -54,6 +86,8 @@ namespace HttpService.Service
     }
 
 
+
+    //delete these
     public async Task<ResponseModel<T>> PutAsync<T>(string url,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\web development\\projects\\HttpService\\HttpService\\HttpService\\HttpService.csproj": {}
+    "D:\\web development\\projects\\HttpService\\HttpServiceDll\\HttpService\\HttpService.csproj": {}
   },
   "projects": {
-    "D:\\web development\\projects\\HttpService\\HttpService\\HttpService\\HttpService.csproj": {
+    "D:\\web development\\projects\\HttpService\\HttpServiceDll\\HttpService\\HttpService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\web development\\projects\\HttpService\\HttpService\\HttpService\\HttpService.csproj",
+        "projectUniqueName": "D:\\web development\\projects\\HttpService\\HttpServiceDll\\HttpService\\HttpService.csproj",
         "projectName": "HttpService",
-        "projectPath": "D:\\web development\\projects\\HttpService\\HttpService\\HttpService\\HttpService.csproj",
+        "projectPath": "D:\\web development\\projects\\HttpService\\HttpServiceDll\\HttpService\\HttpService.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\web development\\projects\\HttpService\\HttpService\\HttpService\\obj\\",
+        "outputPath": "D:\\web development\\projects\\HttpService\\HttpServiceDll\\HttpService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

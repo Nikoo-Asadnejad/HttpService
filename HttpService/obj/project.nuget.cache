@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cM7x4mB5nsEdcmqIslp1qjtr/A90pgDJcC89w0uNYBfoFNE4iUJFPW+iHtQKEgIbOSoD9wsRH0NwoqZDYruJJg==",
+  "dgSpecHash": "EJgq4/hUeJLkEF2Afs9fPZ2uxkllQSmE8TACfHJ4YGMN+SANoIQrPozi0+/pxeDmaV+7deb5q5cx3V52Qi12sA==",
   "success": true,
-  "projectFilePath": "D:\\web development\\projects\\HttpService\\HttpService\\HttpService\\HttpService.csproj",
+  "projectFilePath": "D:\\web development\\projects\\HttpService\\HttpServiceDll\\HttpService\\HttpService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",

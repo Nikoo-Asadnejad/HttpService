@@ -12,63 +12,90 @@ namespace HttpService.Service
   public partial class HttpService : IHttpService
   {
     /// <summary>
-    /// 
+    ///  Send Patch request and serialize the api response model to T
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="url"></param>
-    /// <param name="model"></param>
-    /// <param name="query"></param>
-    /// <param name="headers"></param>
-    /// <returns></returns>
+    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model of T</returns>
     public async Task<ResponseModel<T>> PatchAsync<T>(string url, object model,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Patch, query, headers, model).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
       ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
     }
 
+    /// <summary>
+    ///  Send Patch request and serialize the api response model to T
+    /// </summary>
+    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model of T</returns>
     public async Task<ResponseModel<T>> PatchAsync<T>(string url, object model, string query,
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Patch, query, headers, model).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
       ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
     }
 
+    /// <summary>
+    ///  Send Patch request
+    /// </summary>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model</returns>
     public async Task<ResponseModel<object>> PatchAsync(string url, object model,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Patch, query, headers, model).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
       ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;
     }
 
+    /// <summary>
+    ///  Send Patch request
+    /// </summary>
+    /// <param name="url">Qpi route</param>
+    /// <param name="model">Objet model we want ro pass to api in body</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model</returns>
     public async Task<ResponseModel<object>> PatchAsync(string url, object model, string query,
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Patch, query, headers, model).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
       ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;
     }
 
 
+
+    //del
     public async Task<ResponseModel<T>> PatchAsync<T>(string url,
      Dictionary<string, string>? query = null,
      Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Patch, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, null).Result;
 
       ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
@@ -78,7 +105,7 @@ namespace HttpService.Service
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Patch, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, null).Result;
 
       ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
@@ -89,7 +116,7 @@ namespace HttpService.Service
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Patch, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, null).Result;
 
       ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;
@@ -99,7 +126,7 @@ namespace HttpService.Service
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Patch, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, null).Result;
 
       ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;

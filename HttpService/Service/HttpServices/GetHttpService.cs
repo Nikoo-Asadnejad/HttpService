@@ -11,13 +11,13 @@ namespace HttpService.Service
   public partial class HttpService : IHttpService
   {
     /// <summary>
-    /// Sends Get Request , Serialize the Response Model To T 
+    ///  Send Get request and serialize the api response model to T
     /// </summary>
-    /// <typeparam name="T">The Model we want to map response model to</typeparam>
-    /// <param name="url">Route</param>
-    /// <param name="query">Query</param>
-    /// <param name="headers">Headers</param>
-    /// <returns>ResponseModel<T></returns>
+    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <param name="url">Api route</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model of T</returns>
     public async Task<ResponseModel<T>> GetAsync<T>(string url,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null)
@@ -31,13 +31,13 @@ namespace HttpService.Service
     }
 
     /// <summary>
-    /// Sends Get Request , Serialize the  Response Model To T 
+    ///  Send Get request and serialize the api response model to T
     /// </summary>
-    /// <typeparam name="T"> Response Model</typeparam>
-    /// <param name="url">Route</param>
-    /// <param name="query">Query</param>
-    /// <param name="headers">Headers</param>
-    /// <returns>ResponseModel<T></returns>
+    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <param name="url">Api route</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model of T</returns>
     public async Task<ResponseModel<T>> GetAsync<T>(string url, string query,
       Dictionary<string, string>? headers = null)
     {
@@ -49,12 +49,12 @@ namespace HttpService.Service
     }
 
     /// <summary>
-    /// Sends Get Request ,Don't Serialize the Response Model
+    ///  Send Get request 
     /// </summary>
-    /// <param name="url">Route</param>
-    /// <param name="query">Query</param>
-    /// <param name="headers">Headers</param>
-    /// <returns>ResponseModel<Object></returns>
+    /// <param name="url">Api route</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model</returns>
     public async Task<ResponseModel<object>> GetAsync(string url,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null)
@@ -67,12 +67,12 @@ namespace HttpService.Service
     }
 
     /// <summary>
-    /// Sends Get Request ,Don't Serialize the Response Model
+    ///  Send Get request 
     /// </summary>
-    /// <param name="url">Route</param>
-    /// <param name="query">Query</param>
-    /// <param name="headers">Headers</param>
-    /// <returns>ResponseModel<Object></returns>
+    /// <param name="url">Api route</param>
+    /// <param name="query">Query string</param>
+    /// <param name="headers">Request headers</param>
+    /// <returns>Response model</returns>
     public async Task<ResponseModel<object>> GetAsync(string url, string query,
       Dictionary<string, string>? headers = null)
     {

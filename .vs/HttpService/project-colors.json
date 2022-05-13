@@ -5,6 +5,11 @@
       "ProjectGuid": "33f8a866-55e6-42bd-be7e-39794a34f13b",
       "DisplayName": "HttpService",
       "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 1

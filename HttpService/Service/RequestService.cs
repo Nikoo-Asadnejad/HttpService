@@ -22,6 +22,13 @@ namespace HttpService.Service
       _httpClientFactory = httpClientFactory;
       httpClient = _httpClientFactory.CreateClient();
     }
+
+    /// <summary>
+    /// Send a Http Request 
+    /// </summary>
+    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <param name="requestMessage">HttpRequestMessage we have created for our request</param>
+    /// <returns> ResponseModel of T</returns>
     public async Task<ResponseModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
     {
       
@@ -32,7 +39,6 @@ namespace HttpService.Service
       return responseModel;
     }
 
-    
     public async  Task<HttpRequestMessage> CreateRequestMessageAsync<T>( string url, HttpMethod httpMethod,
                                                           Dictionary<string, string>? query,
                                                           Dictionary<string, string>? headers, object model)
