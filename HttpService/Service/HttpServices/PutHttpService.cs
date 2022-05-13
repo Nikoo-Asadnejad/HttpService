@@ -21,11 +21,11 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model of T</returns>
-    public async Task<ResponseModel<T>> PutAsync<T>(string url, object model,
-      Dictionary<string, string>? query = null, Dictionary<string, string>? headers = null)
+    public async Task<ResponseModel<T>> PutAsync<T>(string url, object model = null,
+      Dictionary<string, string> query = null, Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Put, query, headers, model).Result;
+       _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
 
       ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
@@ -40,11 +40,11 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model of T</returns>
-    public async Task<ResponseModel<T>> PutAsync<T>(string url, object model, string query,
-      Dictionary<string, string>? headers = null)
+    public async Task<ResponseModel<T>> PutAsync<T>(string url, object model = null, string query = null,
+      Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Put, query, headers, model).Result;
+       _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
 
       ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
@@ -57,11 +57,11 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response</returns>
-    public async Task<ResponseModel<object>> PutAsync(string url, object model,
-      Dictionary<string, string>? query = null, Dictionary<string, string>? headers = null)
+    public async Task<ResponseModel<object>> PutAsync(string url, object model = null,
+      Dictionary<string, string> query = null, Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-             _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Put, query, headers, model).Result;
+             _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
 
       ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;
@@ -75,59 +75,16 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response</returns>
-    public async Task<ResponseModel<object>> PutAsync(string url, object model, string query,
-      Dictionary<string, string>? headers = null)
+    public async Task<ResponseModel<object>> PutAsync(string url, object model = null, string query = null,
+      Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Put, query, headers, model).Result;
+       _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
 
       ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;
     }
 
-
-
-    //delete these
-    public async Task<ResponseModel<T>> PutAsync<T>(string url,
-      Dictionary<string, string>? query = null,
-      Dictionary<string, string>? headers = null)
-    {
-      HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Put, query, headers, null).Result;
-
-      ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
-      return requestResponse;
-    }
-
-    public async Task<ResponseModel<T>> PutAsync<T>(string url, string query,
-      Dictionary<string, string>? headers = null)
-    {
-      HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync<T>(url, HttpMethod.Put, query, headers, null).Result;
-
-      ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
-      return requestResponse;
-    }
-
-    public async Task<ResponseModel<object>> PutAsync(string url,
-      Dictionary<string, string>? query = null, Dictionary<string, string>? headers = null)
-    {
-      HttpRequestMessage requestMessage =
-             _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Put, query, headers, null).Result;
-
-      ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
-      return requestResponse;
-    }
-
-    public async Task<ResponseModel<object>> PutAsync(string url, string query,
-      Dictionary<string, string>? headers = null)
-    {
-      HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Put, query, headers, null).Result;
-
-      ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
-      return requestResponse;
-    }
 
 
 
