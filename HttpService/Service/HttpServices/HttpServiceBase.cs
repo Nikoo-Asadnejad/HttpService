@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace HttpService.Service
 {
+  //The HttpService Basement
   public partial class HttpService
   {
     private readonly IRequestService _requestService;

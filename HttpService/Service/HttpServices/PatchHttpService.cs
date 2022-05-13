@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HttpService.Service
 {
-  //Patch
+  //The HttpService Patch Methods
   public partial class HttpService : IHttpService
   {
     /// <summary>

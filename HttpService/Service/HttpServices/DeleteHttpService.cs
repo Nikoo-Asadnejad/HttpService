@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HttpService.Service
 {
-  //Delete
+  //The HttpService Delete Methods
   public partial class HttpService : IHttpService
   {
 
@@ -25,10 +25,11 @@ namespace HttpService.Service
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Delete, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Delete, query, headers, null).Result;
 
 
-      throw new NotImplementedException();
+      ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+      return requestResponse;
     }
 
     /// <summary>
@@ -39,15 +40,16 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model of T</returns>
-    public Task<ResponseModel<T>> DeleteAsync<T>(string url,
+    public async Task<ResponseModel<T>> DeleteAsync<T>(string url,
       string query,
       Dictionary<string, string>? headers = null)
     {
 
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Delete, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Delete, query, headers, null).Result;
 
-      throw new NotImplementedException();
+      ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+      return requestResponse;
     }
 
     /// <summary>
@@ -57,14 +59,15 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model</returns>
-    public Task<ResponseModel<object>> DeleteAsync(string url,
+    public async Task<ResponseModel<object>> DeleteAsync(string url,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Delete, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Delete, query, headers, null).Result;
 
-      throw new NotImplementedException();
+      ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+      return requestResponse;
     }
 
     /// <summary>
@@ -74,13 +77,14 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model</returns>
-    public Task<ResponseModel<object>> DeleteAsync(string url,
+    public async Task<ResponseModel<object>> DeleteAsync(string url,
       string query, Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
-        _requestService.CreateRequestMessageAsync<object>(url, HttpMethod.Delete, query, headers, null).Result;
+        _requestService.CreateRequestMessageAsync(url, HttpMethod.Delete, query, headers, null).Result;
 
-      throw new NotImplementedException();
+      ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+      return requestResponse;
     }
   }
 }
