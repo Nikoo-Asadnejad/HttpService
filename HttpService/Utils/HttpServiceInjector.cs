@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace HttpService.Utils
 {
-  public class ConfigurationAdder
+  public class HttpServiceInjector
   {
-    public static void HttpServiceInjector(IServiceCollection services)
+    public static void Inject(IServiceCollection services)
     {
       services.AddTransient<IRequestService, RequestService>();
-      services.AddTransient<IHttpService,HttpServices.Service.HttpService >();
+      services.AddTransient<IHttpService,Service.HttpService >();
     }
   }
 }

@@ -13,11 +13,11 @@ namespace HttpService.Interface
 
 
 
-    Task<HttpRequestMessage> CreateRequestMessageAsync<T>(string url, HttpMethod httpMethod,
+    Task<HttpRequestMessage> CreateRequestMessageAsync(string url, HttpMethod httpMethod,
                                                           Dictionary<string, string>? query,
                                                           Dictionary<string, string>? headers, object model);
 
-    Task<HttpRequestMessage> CreateRequestMessageAsync<T>(string url,
+    Task<HttpRequestMessage> CreateRequestMessageAsync(string url,
                                                           HttpMethod httpMethod,
                                                           string query,
                                                           Dictionary<string, string>? headers, object model);

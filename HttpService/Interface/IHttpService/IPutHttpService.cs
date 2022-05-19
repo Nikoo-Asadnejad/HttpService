@@ -21,14 +21,6 @@ namespace HttpService.Interface
                                         Dictionary<string, string>? headers = null);
 
 
-    Task<ResponseModel<T>> PutAsync<T>(string url, Dictionary<string, string>? query = null,
-                                      Dictionary<string, string>? headers = null);
-    Task<ResponseModel<T>> PutAsync<T>(string url, string query,
-                                      Dictionary<string, string>? headers = null);
-    Task<ResponseModel<object>> PutAsync(string url, Dictionary<string, string>? query = null,
-                                        Dictionary<string, string>? headers = null);
-    Task<ResponseModel<object>> PutAsync(string url, string query,
-                                        Dictionary<string, string>? headers = null);
 
 
 

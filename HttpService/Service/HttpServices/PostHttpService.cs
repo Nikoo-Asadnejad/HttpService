@@ -78,8 +78,8 @@ namespace HttpService.Service
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model</returns>
-    public async Task<ResponseModel<object>> PostAsync(string url, object model, string query,
-      Dictionary<string, string>? headers = null)
+    public async Task<ResponseModel<object>> PostAsync(string url, object model = null, string query = null,
+      Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
       _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model).Result;

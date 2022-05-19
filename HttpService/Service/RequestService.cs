@@ -26,7 +26,7 @@ namespace HttpService.Service
     /// <summary>
     /// Send a Http Request 
     /// </summary>
-    /// <typeparam name="T">Api response would be serialied to T</typeparam>
+    /// <typeparam name="T">Api response will be serialied to T</typeparam>
     /// <param name="requestMessage">HttpRequestMessage we have created for our request</param>
     /// <returns> ResponseModel of T</returns>
     public async Task<ResponseModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
@@ -39,7 +39,16 @@ namespace HttpService.Service
       return responseModel;
     }
 
-    public async  Task<HttpRequestMessage> CreateRequestMessageAsync<T>( string url, HttpMethod httpMethod,
+    /// <summary>
+    /// Creates a HttpRequestMessage 
+    /// </summary>
+    /// <param name="url">Api Route</param>
+    /// <param name="httpMethod">Http Method</param>
+    /// <param name="query">Query as dictionary object</param>
+    /// <param name="headers">Request Headers</param>
+    /// <param name="model">Object model we want to pass through our request body</param>
+    /// <returns>HttpRequestMessage</returns>
+    public async  Task<HttpRequestMessage> CreateRequestMessageAsync( string url, HttpMethod httpMethod,
                                                           Dictionary<string, string>? query,
                                                           Dictionary<string, string>? headers, object model)
     {
@@ -64,7 +73,16 @@ namespace HttpService.Service
       return requestMessage;
     }
 
-    public async  Task<HttpRequestMessage> CreateRequestMessageAsync<T>(string url,
+    /// <summary>
+    /// Creates a HttpRequestMessage 
+    /// </summary>
+    /// <param name="url">Api Route</param>
+    /// <param name="httpMethod">Http Method</param>
+    /// <param name="query">Query as string</param>
+    /// <param name="headers">Request Headers</param>
+    /// <param name="model">Object model we want to pass through our request body</param>
+    /// <returns>HttpRequestMessage</returns>
+    public async  Task<HttpRequestMessage> CreateRequestMessageAsync(string url,
                                                           HttpMethod httpMethod,
                                                           string query,
                                                           Dictionary<string, string>? headers, object model)
