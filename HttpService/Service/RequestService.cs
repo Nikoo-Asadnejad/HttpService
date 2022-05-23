@@ -9,7 +9,7 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-
+using HttpService.FixValues;
 namespace HttpService.Service
 {
   public class RequestService : IRequestService
@@ -36,7 +36,7 @@ namespace HttpService.Service
       
       var request = _httpClient.SendAsync(requestMessage).Result;
 
-      if(request.Content.Headers.ContentType.MediaType == "application/json; charset=utf-8")
+      if(request.Content.Headers.ContentType.MediaType == FixStrings.MediaTypes.JsonUTF8MediaType)
       {
         var response = request.Content.ReadAsStringAsync().Result;
         ResponseModel<T> responseModel = new(request.StatusCode, response.Deserialize<T>());
@@ -73,7 +73,7 @@ namespace HttpService.Service
 
       HttpRequestMessage requestMessage = new(httpMethod, url);
 
-      MediaTypeWithQualityHeaderValue mediaType = new ("application/json; charset=utf-8");
+      MediaTypeWithQualityHeaderValue mediaType = new (FixStrings.MediaTypes.JsonUTF8MediaType);
       requestMessage.Headers.Accept.Add(mediaType);
 
       if (headers != null)
@@ -82,7 +82,7 @@ namespace HttpService.Service
         await requestMessage.AddHeadersAsync(headers);
       }
       if (model != null)
-        requestMessage.Content = new StringContent( model.Serialize<object>(), Encoding.UTF8, "application/json");
+        requestMessage.Content = new StringContent( model.Serialize<object>(), Encoding.UTF8, FixStrings.MediaTypes.JsonMediaType);
 
       return requestMessage;
     }
@@ -109,7 +109,7 @@ namespace HttpService.Service
 
 
       HttpRequestMessage requestMessage = new(httpMethod, url);
-      MediaTypeWithQualityHeaderValue mediaType = new("application/json; charset=utf-8");
+      MediaTypeWithQualityHeaderValue mediaType = new(FixStrings.MediaTypes.JsonUTF8MediaType);
       requestMessage.Headers.Accept.Add(mediaType);
 
       if (headers != null)
@@ -119,7 +119,7 @@ namespace HttpService.Service
       }
 
       if (model != null)
-        requestMessage.Content = new StringContent( model.Serialize<object>(), Encoding.UTF8, "application/json");
+        requestMessage.Content = new StringContent( model.Serialize<object>(), Encoding.UTF8, FixStrings.MediaTypes.JsonMediaType);
 
       return requestMessage;
     }
