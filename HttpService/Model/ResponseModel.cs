@@ -19,16 +19,18 @@ namespace HttpService.Model
 
     }
 
-    public ResponseModel(HttpStatusCode httpStatusCode, string systemMessage , T model)
+    public ResponseModel(HttpStatusCode httpStatusCode , T? model, string systemMessage = null)
     {
       HttpStatusCode = httpStatusCode;
       SystemMessage = systemMessage;
       Model = model;
     }
-    public ResponseModel(HttpStatusCode httpStatusCode, T model)
+
+    public ResponseModel(HttpStatusCode httpStatusCode,  string systemMessage = null)
     {
       HttpStatusCode = httpStatusCode;
-      Model = model;
+      SystemMessage = systemMessage;
     }
+
   }
 }

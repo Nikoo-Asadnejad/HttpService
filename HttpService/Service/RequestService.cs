@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.WebUtilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,10 +35,21 @@ namespace HttpService.Service
     {
       
       var request = _httpClient.SendAsync(requestMessage).Result;
-      var response = request.Content.ReadAsStringAsync().Result;
-      ResponseModel<T> responseModel = new(request.StatusCode,response.Deserialize<T>());
 
-      return responseModel;
+      if(request.Content.Headers.ContentType.MediaType == "application/json; charset=utf-8")
+      {
+        var response = request.Content.ReadAsStringAsync().Result;
+        ResponseModel<T> responseModel = new(request.StatusCode, response.Deserialize<T>());
+        return responseModel;
+      }
+      else
+      {
+        ResponseModel<T> responseModel = new(HttpStatusCode.UnsupportedMediaType);
+        return responseModel;
+      }
+      
+
+      
     }
 
     /// <summary>
@@ -60,13 +73,14 @@ namespace HttpService.Service
 
       HttpRequestMessage requestMessage = new(httpMethod, url);
 
+      MediaTypeWithQualityHeaderValue mediaType = new ("application/json; charset=utf-8");
+      requestMessage.Headers.Accept.Add(mediaType);
+
       if (headers != null)
       {
         headers = await headers.CheckHeadersAsync();
         await requestMessage.AddHeadersAsync(headers);
       }
-
-
       if (model != null)
         requestMessage.Content = new StringContent( model.Serialize<object>(), Encoding.UTF8, "application/json");
 
@@ -95,6 +109,8 @@ namespace HttpService.Service
 
 
       HttpRequestMessage requestMessage = new(httpMethod, url);
+      MediaTypeWithQualityHeaderValue mediaType = new("application/json; charset=utf-8");
+      requestMessage.Headers.Accept.Add(mediaType);
 
       if (headers != null)
       {
