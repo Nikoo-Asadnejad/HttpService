@@ -70,23 +70,9 @@ namespace HttpService.Service
         query = await query.CheckQueryAsync();
         url = QueryHelpers.AddQueryString(url, query);
       }
-
-      HttpRequestMessage requestMessage = new(httpMethod, url);
-
-      MediaTypeWithQualityHeaderValue mediaType = new (FixStrings.MediaTypes.JsonUTF8MediaType);
-      requestMessage.Headers.Accept.Add(mediaType);
-
-      if (headers != null)
-      {
-        headers = await headers.CheckHeadersAsync();
-        await requestMessage.AddHeadersAsync(headers);
-      }
-      if (model != null)
-        requestMessage.Content = new StringContent( model.Serialize<object>(), Encoding.UTF8, FixStrings.MediaTypes.JsonMediaType);
-
+      HttpRequestMessage requestMessage = SetUpHttpRequest(url, httpMethod, headers, model).Result;
       return requestMessage;
     }
-
     /// <summary>
     /// Creates a HttpRequestMessage 
     /// </summary>
@@ -106,8 +92,15 @@ namespace HttpService.Service
         query = await query.CheckQueryAsync();
         url += query;
       }
+      HttpRequestMessage requestMessage = SetUpHttpRequest(url, httpMethod, headers, model).Result;
 
+      return requestMessage;
+    }
 
+    private async Task<HttpRequestMessage> SetUpHttpRequest(string url,
+                                                          HttpMethod httpMethod,
+                                                          Dictionary<string, string>? headers, object model)
+    {
       HttpRequestMessage requestMessage = new(httpMethod, url);
       MediaTypeWithQualityHeaderValue mediaType = new(FixStrings.MediaTypes.JsonUTF8MediaType);
       requestMessage.Headers.Accept.Add(mediaType);
@@ -119,11 +112,11 @@ namespace HttpService.Service
       }
 
       if (model != null)
-        requestMessage.Content = new StringContent( model.Serialize<object>(), Encoding.UTF8, FixStrings.MediaTypes.JsonMediaType);
+        requestMessage.Content = new StringContent(model.Serialize<object>(), Encoding.UTF8, FixStrings.MediaTypes.JsonMediaType);
 
       return requestMessage;
+
     }
 
-    
   }
 }

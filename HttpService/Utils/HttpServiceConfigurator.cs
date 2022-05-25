@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HttpService.Utils
 {
-  public class HttpServiceInjector
+  public class HttpServiceConfigurator
   {
     public static void Inject(IServiceCollection services)
     {
