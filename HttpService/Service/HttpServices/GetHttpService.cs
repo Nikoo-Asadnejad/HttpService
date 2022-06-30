@@ -11,6 +11,8 @@ namespace HttpService.Service
   //The HttpService Get Methods
   public partial class HttpService : IHttpService
   {
+
+
     /// <summary>
     ///  Send Get request and serialize the api response model to T
     /// </summary>
