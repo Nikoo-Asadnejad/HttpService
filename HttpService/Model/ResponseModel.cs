@@ -11,6 +11,8 @@ namespace HttpService.Model
   {
     public HttpStatusCode HttpStatusCode { get; set; }
     public string SystemMessage { get; set; }
+    public string Message { get; set; }
+    public dynamic Errors { get; set; }
     public T? Model { get; set; }
 
 
@@ -19,18 +21,27 @@ namespace HttpService.Model
 
     }
 
-    public ResponseModel(HttpStatusCode httpStatusCode , T? model, string systemMessage = null)
+    public ResponseModel(HttpStatusCode httpStatusCode , T? model,
+                          string message = null , string systemMessage = null ,
+                          dynamic errors = null)
     {
       HttpStatusCode = httpStatusCode;
       SystemMessage = systemMessage;
       Model = model;
+      Message = message;
+      Errors =errors;
     }
 
-    public ResponseModel(HttpStatusCode httpStatusCode,  string systemMessage = null)
+    public ResponseModel(HttpStatusCode httpStatusCode,string message = null,
+                        string systemMessage = null , dynamic errors = null)
     {
       HttpStatusCode = httpStatusCode;
       SystemMessage = systemMessage;
+      Message = message;
+      Errors = errors;
     }
+
+
 
   }
 }
