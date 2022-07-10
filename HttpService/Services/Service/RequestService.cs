@@ -10,9 +10,8 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using HttpService.FixValues;
-namespace HttpService.Service
-{
-  public class RequestService : IRequestService
+namespace HttpService.Service;
+public class RequestService : IRequestService
   {
 
 
@@ -119,4 +118,4 @@ namespace HttpService.Service
     }
 
   }
-}
+

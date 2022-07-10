@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Service
-{
-  //The HttpService Get Methods
-  public partial class HttpService : IHttpService
+namespace HttpService.Service;
+
+//The HttpService Get Methods
+public partial class HttpService : IHttpService
   {
 
 
@@ -88,4 +88,4 @@ namespace HttpService.Service
     }
 
   }
-}
+

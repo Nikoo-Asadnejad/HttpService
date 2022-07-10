@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Utils
-{
-  public static class JsonConverter
+namespace HttpService.Utils;
+public static class JsonConverter
   {
     public static string Serialize<T>(this T obj)
     => JsonConvert.SerializeObject(obj);
@@ -16,4 +15,4 @@ namespace HttpService.Utils
     => JsonConvert.DeserializeObject<T>(json);
 
   }
-}
+

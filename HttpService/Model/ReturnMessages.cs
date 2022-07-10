@@ -1,5 +1,5 @@
-namespace HttpService.Model
-{
+namespace HttpService.Model;
+
   public struct ReturnMessages
   {
     public const string SuccessMessage = "عملیات با موفقعیت انجام شد";
@@ -10,4 +10,4 @@ namespace HttpService.Model
     public const string InvalidInputErrorMessage = "داده ورودی نا معتبر است";
     public const string BadRequestErrorMessage = "خطایی در دریافت اطلاعات رخ داده است";
   }
-}
+

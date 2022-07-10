@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Interface
-{
-  public interface IRequestService
+namespace HttpService.Interface;
+public interface IRequestService
   {
     Task<ResponseModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage);
 
@@ -24,4 +23,3 @@ namespace HttpService.Interface
 
 
   }
-}

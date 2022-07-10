@@ -6,10 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Service
-{
-  //The HttpService Delete Methods
-  public partial class HttpService : IHttpService
+namespace HttpService.Service;
+ //The HttpService Delete Methods
+public partial class HttpService : IHttpService
   {
 
     /// <summary>
@@ -87,4 +86,4 @@ namespace HttpService.Service
       return requestResponse;
     }
   }
-}
+

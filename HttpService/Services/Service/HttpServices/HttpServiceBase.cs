@@ -9,8 +9,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Service
-{
+namespace HttpService.Service;
+
   //The HttpService Base
   public partial class HttpService : IHttpService
   {
@@ -23,4 +23,4 @@ namespace HttpService.Service
 
 
   }
-}
+

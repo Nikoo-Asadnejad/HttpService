@@ -5,9 +5,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Utils
-{
-  public static class HttpStatusExtentions
+namespace HttpService.Utils;
+public static class HttpStatusExtensions
   {
     public static bool IsSuccessfulll(this HttpStatusCode httpStatusCode)
       => httpStatusCode is HttpStatusCode.OK ||
@@ -23,4 +22,4 @@ namespace HttpService.Utils
 
 
   }
-}
+

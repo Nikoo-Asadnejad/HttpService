@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Interface
-{
-  public partial interface IHttpService
+namespace HttpService.Interface;
+public partial interface IHttpService
   {
 
     Task<ResponseModel<T>> PatchAsync<T>(string url, object model, Dictionary<string, string>? query = null,
@@ -23,4 +22,4 @@ namespace HttpService.Interface
 
 
   }
-}
+

@@ -5,9 +5,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Model
-{
-  public class ResponseModel<T>
+namespace HttpService.Model;
+public class ResponseModel<T>
   {
     public HttpStatusCode HttpStatusCode { get; set; }
     public T? Data { get; set; }
@@ -80,11 +79,13 @@ namespace HttpService.Model
 
     }
 
-    public void CreateInvalidInputErrorModel(string title = null, string message = null )
+    public void CreateInvalidInputErrorModel(string title = null, string message = null ,
+      List<FieldErrorsModel> fieldErrors = null)
     {
       this.HttpStatusCode = HttpStatusCode.BadRequest;
       this.DataTitle = title is null ? this.DataTitle : title;
       this.Message = message is null ? ReturnMessages.InvalidInputErrorMessage : message;
+      this.Errors = fieldErrors;
     }
 
     public void CreateDuplicatedErrorModel(string title = null, string message = null)
@@ -95,4 +96,4 @@ namespace HttpService.Model
     }
 
   }
-}
+

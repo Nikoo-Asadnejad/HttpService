@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Utils
-{
-  public static class RequestHelper
+namespace HttpService.Utils;
+public static class RequestHelperExtensions
   {
     /// <summary>
     /// Add required headers to the request message
@@ -64,4 +63,4 @@ namespace HttpService.Utils
     }
 
   }
-}
+

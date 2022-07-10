@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Service
-{
-  //The HttpService Patch Methods
-  public partial class HttpService : IHttpService
+namespace HttpService.Service;
+
+//The HttpService Patch Methods
+public partial class HttpService : IHttpService
   {
     /// <summary>
     ///  Send Patch request and serialize the api response model to T
@@ -89,4 +89,4 @@ namespace HttpService.Service
 
 
   }
-}
+

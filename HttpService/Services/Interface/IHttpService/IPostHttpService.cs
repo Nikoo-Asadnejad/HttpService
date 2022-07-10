@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Interface
-{
-  public partial interface IHttpService
+namespace HttpService.Interface;
+public partial interface IHttpService
   {
 
     Task<ResponseModel<T>> PostAsync<T>(string url, object model, Dictionary<string, string>? query = null,
@@ -19,4 +18,3 @@ namespace HttpService.Interface
     Task<ResponseModel<object>> PostAsync(string url, object model, string query,
                                           Dictionary<string, string>? headers = null);
   }
-}

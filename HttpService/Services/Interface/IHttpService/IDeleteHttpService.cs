@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpService.Interface
-{
-  public partial interface IHttpService
+namespace HttpService.Interface;
+public partial interface IHttpService
   {
     Task<ResponseModel<T>> DeleteAsync<T>(string url, Dictionary<string, string>? query = null,
                                         Dictionary<string, string>? headers = null);
@@ -21,4 +20,4 @@ namespace HttpService.Interface
     Task<ResponseModel<object>> DeleteAsync(string url, string query,
                                            Dictionary<string, string>? headers = null);
   }
-}
+
