@@ -10,10 +10,11 @@ namespace HttpService.Model
   public class ResponseModel<T>
   {
     public HttpStatusCode HttpStatusCode { get; set; }
+    public T? Model { get; set; }
     public string SystemMessage { get; set; }
     public string Message { get; set; }
     public dynamic Errors { get; set; }
-    public T? Model { get; set; }
+    
 
 
     public ResponseModel()
