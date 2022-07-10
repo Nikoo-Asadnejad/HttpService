@@ -19,10 +19,10 @@ namespace HttpService.Service
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly HttpClient _httpClient;
 
-    public RequestService(IHttpClientFactory httpClientFactory, HttpClient httpClient)
+    public RequestService(IHttpClientFactory httpClientFactory)
     {
       _httpClientFactory = httpClientFactory;
-      httpClient = _httpClientFactory.CreateClient();
+      _httpClient = _httpClientFactory.CreateClient();
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ namespace HttpService.Service
       
       var request = _httpClient.SendAsync(requestMessage).Result;
 
-      if(request.Content.Headers.ContentType.MediaType == FixStrings.MediaTypes.JsonUTF8MediaType)
+      if(request.Content.Headers.ContentType.MediaType is FixStrings.MediaTypes.JsonUTF8MediaType)
       {
         var response = request.Content.ReadAsStringAsync().Result;
         ResponseModel<T> responseModel = new(request.StatusCode, response.Deserialize<T>());
@@ -65,7 +65,7 @@ namespace HttpService.Service
                                                           Dictionary<string, string>? query,
                                                           Dictionary<string, string>? headers, object model)
     {
-      if (query != null)
+      if (query is not null)
       {
         query = await query.CheckQueryAsync();
         url = QueryHelpers.AddQueryString(url, query);
@@ -87,7 +87,7 @@ namespace HttpService.Service
                                                           string query,
                                                           Dictionary<string, string>? headers, object model)
     {
-      if (query != null)
+      if (query is not null)
       {
         query = await query.CheckQueryAsync();
         url += query;
@@ -105,13 +105,13 @@ namespace HttpService.Service
       MediaTypeWithQualityHeaderValue mediaType = new(FixStrings.MediaTypes.JsonUTF8MediaType);
       requestMessage.Headers.Accept.Add(mediaType);
 
-      if (headers != null)
+      if (headers is not null)
       {
         headers = await headers.CheckHeadersAsync();
         await requestMessage.AddHeadersAsync(headers);
       }
 
-      if (model != null)
+      if (model is not null)
         requestMessage.Content = new StringContent(model.Serialize<object>(), Encoding.UTF8, FixStrings.MediaTypes.JsonMediaType);
 
       return requestMessage;
