@@ -11,7 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace HttpService.Service;
-//The HttpService Post Methods
+
+//The HttpService PostFormDataAsyn Methods
 public partial class HttpService : IHttpService
 {
 
