@@ -12,14 +12,13 @@ public partial interface IHttpService
     Task<ResponseModel<T>> PatchFormDataAsync<T>(string url, object model, Dictionary<string, string>? query = null,
                                         Dictionary<string, string>? headers = null);
 
-    Task<ResponseModel<T>> PatchFormDataAsync<T>(string url, object model, string query,
+    Task<ResponseModel<T>> PatchFormDataAsync<T>(string url, object model, string? query = null,
                                         Dictionary<string, string>? headers = null);
     Task<ResponseModel<object>> PatchFormDataAsync(string url, object model, Dictionary<string, string>? query = null,
                                           Dictionary<string, string>? headers = null);
 
-    Task<ResponseModel<object>> PatchFormDataAsync(string url, object model, string query,
+    Task<ResponseModel<object>> PatchFormDataAsync(string url, object model, string? query = null,
                                           Dictionary<string, string>? headers = null);
-
 
   }
 
