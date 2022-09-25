@@ -1,5 +1,5 @@
 using HttpService.Interface;
-using HttpService.Model;
+ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +20,14 @@ public partial class HttpService : IHttpService
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model of T</returns>
-    public async Task<ResponseModel<T>> PatchAsync<T>(string url, object model = null,
+    public async Task<ReturnModel<T>> PatchAsync<T>(string url, object model = null,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null)
     {
       HttpRequestMessage requestMessage =
         _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
-      ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+      ReturnModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
     }
 
@@ -40,13 +40,13 @@ public partial class HttpService : IHttpService
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model of T</returns>
-    public async Task<ResponseModel<T>> PatchAsync<T>(string url, object model = null, string query = null,
+    public async Task<ReturnModel<T>> PatchAsync<T>(string url, object model = null, string query = null,
       Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
         _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
-      ResponseModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+      ReturnModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
       return requestResponse;
     }
 
@@ -58,14 +58,14 @@ public partial class HttpService : IHttpService
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model</returns>
-    public async Task<ResponseModel<object>> PatchAsync(string url, object model = null,
+    public async Task<ReturnModel<object>> PatchAsync(string url, object model = null,
       Dictionary<string, string> query = null,
       Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
         _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
-      ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+      ReturnModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;
     }
 
@@ -77,13 +77,13 @@ public partial class HttpService : IHttpService
     /// <param name="query">Query string</param>
     /// <param name="headers">Request headers</param>
     /// <returns>Response model</returns>
-    public async Task<ResponseModel<object>> PatchAsync(string url, object model = null, string query = null,
+    public async Task<ReturnModel<object>> PatchAsync(string url, object model = null, string query = null,
       Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
         _requestService.CreateRequestMessageAsync(url, HttpMethod.Patch, query, headers, model).Result;
 
-      ResponseModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+      ReturnModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
       return requestResponse;
     }
 

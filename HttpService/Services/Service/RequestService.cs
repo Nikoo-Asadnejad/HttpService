@@ -1,5 +1,5 @@
 using HttpService.Interface;
-using HttpService.Model;
+ 
 using HttpService.Utils;
 using Microsoft.AspNetCore.WebUtilities;
 using System;
@@ -32,8 +32,8 @@ public class RequestService : IRequestService
   /// </summary>
   /// <typeparam name="T">Api response will be serialied to T</typeparam>
   /// <param name="requestMessage">HttpRequestMessage we have created for our request</param>
-  /// <returns> ResponseModel of T</returns>
-  public async Task<ResponseModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
+  /// <returns> ReturnModel of T</returns>
+  public async Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
   {
 
     var request = _httpClient.SendAsync(requestMessage).Result;
@@ -41,13 +41,14 @@ public class RequestService : IRequestService
     if (IsContentTypeValid(request.Content.Headers.ContentType))
     {
       var response = request.Content.ReadAsStringAsync().Result;
-      ResponseModel<T> responseModel = new(request.StatusCode, response.Deserialize<T>());
-      return responseModel;
+      ReturnModel<T> ReturnModel = new(statusCode :request.StatusCode, data: response.Deserialize<T>());
+      return ReturnModel;
     }
     else
     {
-      ResponseModel<T> responseModel = new(HttpStatusCode.UnsupportedMediaType);
-      return responseModel;
+      ReturnModel<T> ReturnModel = new();
+      ReturnModel.CreateUnSupportedMediaType();
+      return ReturnModel;
     }
   }
 

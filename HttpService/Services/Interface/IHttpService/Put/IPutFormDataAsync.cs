@@ -1,4 +1,4 @@
-using HttpService.Model;
+ 
 using HttpService.Service;
 using System;
 using System.Collections.Generic;
@@ -10,13 +10,13 @@ namespace HttpService.Interface;
 public partial interface IHttpService 
   {
 
-    Task<ResponseModel<T>> PutFormDataAsync<T>(string url, object model, Dictionary<string, string>? query = null,
+    Task<ReturnModel<T>> PutFormDataAsync<T>(string url, object model, Dictionary<string, string>? query = null,
                                       Dictionary<string, string>? headers = null);
-    Task<ResponseModel<T>> PutFormDataAsync<T>(string url, object model, string query,
+    Task<ReturnModel<T>> PutFormDataAsync<T>(string url, object model, string query,
                                       Dictionary<string, string>? headers = null);
-    Task<ResponseModel<object>> PutFormDataAsync(string url, object model, Dictionary<string, string>? query = null,
+    Task<ReturnModel<object>> PutFormDataAsync(string url, object model, Dictionary<string, string>? query = null,
                                         Dictionary<string, string>? headers = null);
-    Task<ResponseModel<object>> PutFormDataAsync(string url, object model, string query,
+    Task<ReturnModel<object>> PutFormDataAsync(string url, object model, string query,
                                         Dictionary<string, string>? headers = null);
 
 

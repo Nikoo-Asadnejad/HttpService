@@ -1,4 +1,4 @@
-using HttpService.Model;
+ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 namespace HttpService.Services.Interface.IHttpService;
   public partial interface IHttpService
   {
-  Task<ResponseModel<T>> DeleteAsync<T>(string url,
+  Task<ReturnModel<T>> DeleteAsync<T>(string url,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null);
 
-  Task<ResponseModel<T>> DeleteAsync<T>(string url,
+  Task<ReturnModel<T>> DeleteAsync<T>(string url,
       string query,
       Dictionary<string, string>? headers = null);
 
 
-  Task<ResponseModel<object>> DeleteAsync(string url,
+  Task<ReturnModel<object>> DeleteAsync(string url,
       Dictionary<string, string>? query = null,
       Dictionary<string, string>? headers = null);
 
-  Task<ResponseModel<object>> DeleteAsync(string url,
+  Task<ReturnModel<object>> DeleteAsync(string url,
       string query, Dictionary<string, string>? headers = null);
   }
 

@@ -1,5 +1,5 @@
 using HttpService.FixValues;
-using HttpService.Model;
+ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ public interface IRequestService
   {
 
     
-    Task<ResponseModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage);
+    Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage);
 
     
 

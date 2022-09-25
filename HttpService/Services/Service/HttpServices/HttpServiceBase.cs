@@ -1,5 +1,4 @@
 using HttpService.Interface;
-using HttpService.Model;
 using HttpService.Utils;
 using Microsoft.AspNetCore.WebUtilities;
 using System;

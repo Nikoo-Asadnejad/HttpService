@@ -14,4 +14,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="ErrorHandlingDll">
+      <HintPath>..\..\..\ErrorHandlingDll\ErrorHandlingDll\ErrorHandlingDll\ErrorHandlingDll\bin\Release\net6.0\ErrorHandlingDll.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
