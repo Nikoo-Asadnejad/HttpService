@@ -18,13 +18,13 @@ public interface IRequestService
     Task<HttpRequestMessage> CreateRequestMessageAsync(string url, HttpMethod httpMethod,
                                                           Dictionary<string, string>? query,
                                                           Dictionary<string, string>? headers, object model,
-                                                          string mediaType = MediaTypes.UTF8Json);
+                                                          string mediaType = MediaTypes.Json);
 
     Task<HttpRequestMessage> CreateRequestMessageAsync(string url,
                                                           HttpMethod httpMethod,
                                                           string query,
                                                           Dictionary<string, string>? headers, object model,
-                                                          string mediaType = MediaTypes.UTF8Json);
+                                                          string mediaType = MediaTypes.Json);
 
 
 
