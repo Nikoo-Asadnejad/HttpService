@@ -30,9 +30,9 @@ public partial class HttpService : IHttpService
     Dictionary<string, string> headers = null)
   {
     HttpRequestMessage requestMessage =
-      _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model, MediaTypes.FormData).Result;
+      await _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model, MediaTypes.FormData);
 
-    ReturnModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+    ReturnModel<T> requestResponse = await _requestService.SendRequestAsync<T>(requestMessage);
     return requestResponse;
   }
 
@@ -50,9 +50,9 @@ public partial class HttpService : IHttpService
     Dictionary<string, string> headers = null)
   {
     HttpRequestMessage requestMessage =
-    _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model, MediaTypes.FormData).Result;
+    await _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model, MediaTypes.FormData);
 
-    ReturnModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+    ReturnModel<T> requestResponse =await _requestService.SendRequestAsync<T>(requestMessage);
     return requestResponse;
   }
 
@@ -70,9 +70,9 @@ public partial class HttpService : IHttpService
     Dictionary<string, string> headers = null)
   {
     HttpRequestMessage requestMessage =
-    _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model, MediaTypes.FormData).Result;
+    await _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model, MediaTypes.FormData);
 
-    ReturnModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+    ReturnModel<object> requestResponse = await _requestService.SendRequestAsync<object>(requestMessage);
     return requestResponse;
   }
 
@@ -89,9 +89,9 @@ public partial class HttpService : IHttpService
     Dictionary<string, string> headers = null)
   {
     HttpRequestMessage requestMessage =
-    _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model , MediaTypes.FormData).Result;
+    await _requestService.CreateRequestMessageAsync(url, HttpMethod.Post, query, headers, model , MediaTypes.FormData);
 
-    ReturnModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+    ReturnModel<object> requestResponse = await _requestService.SendRequestAsync<object>(requestMessage);
     return requestResponse;
   }
 

@@ -25,11 +25,12 @@ public partial class HttpService  : IHttpService
       Dictionary<string, string> query = null, Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
+       await _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model);
 
-      ReturnModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+      ReturnModel<T> requestResponse = await _requestService.SendRequestAsync<T>(requestMessage);
       return requestResponse;
     }
+    
 
     /// <summary>
     ///  Send Put request and serialize the api response model to T
@@ -44,11 +45,13 @@ public partial class HttpService  : IHttpService
       Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
+       await _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model);
 
-      ReturnModel<T> requestResponse = _requestService.SendRequestAsync<T>(requestMessage).Result;
+      ReturnModel<T> requestResponse =await _requestService.SendRequestAsync<T>(requestMessage);
       return requestResponse;
     }
+    
+    
     /// <summary>
     ///  Send Put request
     /// </summary>
@@ -61,9 +64,9 @@ public partial class HttpService  : IHttpService
       Dictionary<string, string> query = null, Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-             _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
+            await _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model);
 
-      ReturnModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+      ReturnModel<object> requestResponse = await _requestService.SendRequestAsync<object>(requestMessage);
       return requestResponse;
     }
 
@@ -79,14 +82,12 @@ public partial class HttpService  : IHttpService
       Dictionary<string, string> headers = null)
     {
       HttpRequestMessage requestMessage =
-       _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model).Result;
+      await _requestService.CreateRequestMessageAsync(url, HttpMethod.Put, query, headers, model);
 
-      ReturnModel<object> requestResponse = _requestService.SendRequestAsync<object>(requestMessage).Result;
+      ReturnModel<object> requestResponse =await _requestService.SendRequestAsync<object>(requestMessage);
       return requestResponse;
     }
-
-
-
+    
 
   }
 

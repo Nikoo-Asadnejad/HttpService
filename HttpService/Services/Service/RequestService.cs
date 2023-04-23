@@ -36,11 +36,11 @@ public class RequestService : IRequestService
   public async Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
   {
 
-    var request = _httpClient.SendAsync(requestMessage).Result;
+    var request = await _httpClient.SendAsync(requestMessage);
 
     if (IsContentTypeValid(request.Content.Headers.ContentType))
     {
-      var response = request.Content.ReadAsStringAsync().Result;
+      var response = await request.Content.ReadAsStringAsync();
       ReturnModel<T> ReturnModel = new(statusCode :request.StatusCode, data: response.Deserialize<T>());
       return ReturnModel;
     }
