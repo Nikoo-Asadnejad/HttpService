@@ -36,7 +36,7 @@ public class RequestService : IRequestService
   public async Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
   {
 
-    var request = await _httpClient.SendAsync(requestMessage);
+    var request = await _httpClient.SendAsync(requestMessage,HttpCompletionOption.ResponseHeadersRead);
 
     if (IsContentTypeValid(request.Content.Headers.ContentType))
     {
@@ -85,7 +85,7 @@ public class RequestService : IRequestService
   /// <returns>HttpRequestMessage</returns>
   public async Task<HttpRequestMessage> CreateRequestMessageAsync(string url,
                                                         HttpMethod httpMethod,
-                                                        string query,
+                                                        string? query,
                                                         Dictionary<string, string>? headers, object model,
                                                         string mediaType = MediaTypes.Json)
   {
