@@ -36,21 +36,19 @@ public class RequestService : IRequestService
   /// <returns> ReturnModel of T</returns>
   public async Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
   {
-
     var request = await _httpClient.SendAsync(requestMessage,HttpCompletionOption.ResponseHeadersRead);
-
     if (IsContentTypeValid(request.Content.Headers.ContentType))
     {
       var responseStream = await request.Content.ReadAsStreamAsync();
       T responseData = JsonSerializer.Deserialize<T>(responseStream);
-      ReturnModel<T> ReturnModel = new(statusCode :request.StatusCode, data: responseData);
-      return ReturnModel;
+      ReturnModel<T> returnModel = new(statusCode :request.StatusCode, data: responseData);
+      return returnModel;
     }
     else
     {
-      ReturnModel<T> ReturnModel = new();
-      ReturnModel.CreateUnSupportedMediaType();
-      return ReturnModel;
+      ReturnModel<T> returnModel = new();
+      returnModel.CreateUnSupportedMediaType();
+      return returnModel;
     }
   }
 
@@ -100,8 +98,7 @@ public class RequestService : IRequestService
 
     return requestMessage;
   }
-
-
+  
 
   private async Task<HttpRequestMessage> SetUpHttpRequest(string url,
                                                         HttpMethod httpMethod,
