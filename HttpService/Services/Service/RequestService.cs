@@ -36,7 +36,8 @@ public class RequestService : IRequestService
   /// <returns> ReturnModel of T</returns>
   public async Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
   {
-    var request = await _httpClient.SendAsync(requestMessage,HttpCompletionOption.ResponseHeadersRead);
+    var request = await _httpClient.SendAsync(requestMessage,HttpCompletionOption.ResponseHeadersRead); 
+    request.EnsureSuccessStatusCode();
     if (IsContentTypeValid(request.Content.Headers.ContentType))
     {
       var responseStream = await request.Content.ReadAsStreamAsync();

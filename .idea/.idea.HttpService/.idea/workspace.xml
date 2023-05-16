@@ -4,10 +4,7 @@
     <projectFile pubXmlPath="HttpService/Properties/PublishProfiles/FolderProfile.pubxml">HttpService/HttpService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HttpService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HttpService/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" afterDir="false" />
-    </list>
+    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +60,7 @@
       <workItem from="1681982811015" duration="127000" />
       <workItem from="1682238541172" duration="964000" />
       <workItem from="1683914744861" duration="91000" />
+      <workItem from="1684225407132" duration="772000" />
     </task>
     <servers />
   </component>
