@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HttpService.FixValues;
 using System.Reflection;
+using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 
 namespace HttpService.Service;
@@ -40,8 +41,9 @@ public class RequestService : IRequestService
 
     if (IsContentTypeValid(request.Content.Headers.ContentType))
     {
-      var response = await request.Content.ReadAsStringAsync();
-      ReturnModel<T> ReturnModel = new(statusCode :request.StatusCode, data: response.Deserialize<T>());
+      var responseStream = await request.Content.ReadAsStreamAsync();
+      T responseData = JsonSerializer.Deserialize<T>(responseStream);
+      ReturnModel<T> ReturnModel = new(statusCode :request.StatusCode, data: responseData);
       return ReturnModel;
     }
     else
