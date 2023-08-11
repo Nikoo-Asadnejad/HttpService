@@ -72,7 +72,7 @@ public class RequestService : IRequestService
       query = await query.CheckQueryAsync();
       url = QueryHelpers.AddQueryString(url, query);
     }
-    HttpRequestMessage requestMessage = SetUpHttpRequest(url, httpMethod, headers, model).Result;
+    HttpRequestMessage requestMessage = await SetUpHttpRequest(url, httpMethod, headers, model);
     return requestMessage;
   }
   /// <summary>
@@ -95,7 +95,7 @@ public class RequestService : IRequestService
       query = await query.CheckQueryAsync();
       url += query;
     }
-    HttpRequestMessage requestMessage = SetUpHttpRequest(url, httpMethod, headers, model).Result;
+    HttpRequestMessage requestMessage = await SetUpHttpRequest(url, httpMethod, headers, model);
 
     return requestMessage;
   }
