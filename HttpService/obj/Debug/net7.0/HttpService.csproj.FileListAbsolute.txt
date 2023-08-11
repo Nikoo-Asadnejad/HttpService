@@ -1,0 +1,15 @@
+/Users/macbook/Projects/HttpService/HttpService/bin/Debug/net7.0/HttpService.deps.json
+/Users/macbook/Projects/HttpService/HttpService/bin/Debug/net7.0/HttpService.dll
+/Users/macbook/Projects/HttpService/HttpService/bin/Debug/net7.0/HttpService.pdb
+/Users/macbook/Projects/HttpService/HttpService/bin/Debug/net7.0/ResponseHelpers.dll
+/Users/macbook/Projects/HttpService/HttpService/bin/Debug/net7.0/ResponseHelpers.pdb
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.csproj.AssemblyReference.cache
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.AssemblyInfoInputs.cache
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.AssemblyInfo.cs
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.csproj.CoreCompileInputs.cache
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.csproj.CopyComplete
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.dll
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/refint/HttpService.dll
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/HttpService.pdb
+/Users/macbook/Projects/HttpService/HttpService/obj/Debug/net7.0/ref/HttpService.dll

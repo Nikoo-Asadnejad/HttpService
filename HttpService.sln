@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpService", "HttpService\HttpService.csproj", "{33F8A866-55E6-42BD-BE7E-39794A34F13B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponseHelpers", "..\ResponseBase\ResponseBase\ResponseHelpers\ResponseHelpers.csproj", "{52C85519-5F29-4DC4-B34C-20A4688B5F8D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{33F8A866-55E6-42BD-BE7E-39794A34F13B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F8A866-55E6-42BD-BE7E-39794A34F13B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F8A866-55E6-42BD-BE7E-39794A34F13B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52C85519-5F29-4DC4-B34C-20A4688B5F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52C85519-5F29-4DC4-B34C-20A4688B5F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52C85519-5F29-4DC4-B34C-20A4688B5F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52C85519-5F29-4DC4-B34C-20A4688B5F8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

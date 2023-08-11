@@ -4,7 +4,35 @@
     <projectFile pubXmlPath="HttpService/Properties/PublishProfiles/FolderProfile.pubxml">HttpService/HttpService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="" />
+    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/HttpService/globalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net7.0/HttpService.AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net7.0/HttpService.AssemblyInfoInputs.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net7.0/HttpService.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net7.0/HttpService.GlobalUsings.g.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net7.0/HttpService.assets.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net7.0/HttpService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HttpService/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HttpService/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService.sln" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/Dlls/ErrorHandlingDll.deps.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/Dlls/ErrorHandlingDll.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/Dlls/ErrorHandlingDll.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/HttpService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/HttpService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/Properties/PublishProfiles/FolderProfile.pubxml" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/Properties/PublishProfiles/FolderProfile.pubxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/Services/Interface/IHttpService/Delete/IDeleteAsync.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/Services/Interface/IHttpService/Delete/IDeleteAsync.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/Services/Interface/IRequestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/Services/Interface/IRequestService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/Debug/net6.0/HttpService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net6.0/HttpService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/Debug/net6.0/HttpService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/Debug/net6.0/HttpService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/HttpService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/HttpService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/HttpService.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/HttpService.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/HttpService.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/HttpService.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +90,8 @@
       <workItem from="1682238541172" duration="964000" />
       <workItem from="1683914744861" duration="91000" />
       <workItem from="1684225407132" duration="1056000" />
-      <workItem from="1691757835546" duration="932000" />
+      <workItem from="1691757835546" duration="2102000" />
+      <workItem from="1691760449570" duration="818000" />
     </task>
     <servers />
   </component>

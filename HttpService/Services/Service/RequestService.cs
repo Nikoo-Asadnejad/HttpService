@@ -1,14 +1,7 @@
 using HttpService.Interface;
- 
 using HttpService.Utils;
 using Microsoft.AspNetCore.WebUtilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using HttpService.FixValues;
 using System.Reflection;
 using System.Text.Json;
@@ -34,8 +27,8 @@ public class RequestService : IRequestService
   /// </summary>
   /// <typeparam name="T">Api response will be serialized to T</typeparam>
   /// <param name="requestMessage">HttpRequestMessage we have created for our request</param>
-  /// <returns> ReturnModel of T</returns>
-  public async Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
+  /// <returns> ResponseBase of T</returns>
+  public async Task<ResponseBase<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
   {
     var request = await _httpClient.SendAsync(requestMessage,HttpCompletionOption.ResponseHeadersRead); 
     request.EnsureSuccessStatusCode();
@@ -47,14 +40,14 @@ public class RequestService : IRequestService
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
       };
       T responseData = JsonSerializer.Deserialize<T>(responseStream , options);
-      ReturnModel<T> returnModel = new(statusCode :request.StatusCode, data: responseData);
-      return returnModel;
+      ResponseBase<T> ResponseBase = new(statusCode :request.StatusCode, data: responseData);
+      return ResponseBase;
     }
     else
     {
-      ReturnModel<T> returnModel = new();
-      returnModel.CreateUnSupportedMediaType();
-      return returnModel;
+      ResponseBase<T> ResponseBase = new();
+      ResponseBase.UnSupportedMediaType();
+      return ResponseBase;
     }
   }
 
