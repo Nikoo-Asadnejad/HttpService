@@ -4,7 +4,9 @@
     <projectFile pubXmlPath="HttpService/Properties/PublishProfiles/FolderProfile.pubxml">HttpService/HttpService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="" />
+    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +14,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/87f1e7633ddc479eb7f1a57adb25f92b6000/c8/259ebefd/ReturnModel`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a4922090f13d114d2c1c6b83123bc7527afa9b5dd479e5abcb35fd94fb9a7/JsonSerializer.Read.Stream.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,6 +64,7 @@
       <workItem from="1682238541172" duration="964000" />
       <workItem from="1683914744861" duration="91000" />
       <workItem from="1684225407132" duration="1056000" />
+      <workItem from="1691757835546" duration="477000" />
     </task>
     <servers />
   </component>

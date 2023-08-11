@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using HttpService.FixValues;
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 
 namespace HttpService.Service;
@@ -41,7 +42,11 @@ public class RequestService : IRequestService
     if (IsContentTypeValid(request.Content.Headers.ContentType))
     {
       var responseStream = await request.Content.ReadAsStreamAsync();
-      T responseData = JsonSerializer.Deserialize<T>(responseStream);
+      JsonSerializerOptions? options = new()
+      {
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+      };
+      T responseData = JsonSerializer.Deserialize<T>(responseStream , options);
       ReturnModel<T> returnModel = new(statusCode :request.StatusCode, data: responseData);
       return returnModel;
     }
@@ -112,6 +117,8 @@ public class RequestService : IRequestService
     HttpRequestMessage requestMessage = new(httpMethod, url);
     MediaTypeWithQualityHeaderValue requestMediaType = new(mediaType);
 
+    requestMessage.VersionPolicy = HttpVersionPolicy.RequestVersionOrHigher;
+    requestMessage.Version = new Version(2, 1);
     requestMessage.Headers.Accept.Add(requestMediaType);
     if (headers is not null)
     {
