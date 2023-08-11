@@ -4,9 +4,7 @@
     <projectFile pubXmlPath="HttpService/Properties/PublishProfiles/FolderProfile.pubxml">HttpService/HttpService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HttpService/Services/Service/RequestService.cs" afterDir="false" />
-    </list>
+    <list default="true" id="1755ce68-62a7-415a-b6c6-7a04429abb19" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +62,7 @@
       <workItem from="1682238541172" duration="964000" />
       <workItem from="1683914744861" duration="91000" />
       <workItem from="1684225407132" duration="1056000" />
-      <workItem from="1691757835546" duration="477000" />
+      <workItem from="1691757835546" duration="932000" />
     </task>
     <servers />
   </component>
@@ -72,6 +70,17 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

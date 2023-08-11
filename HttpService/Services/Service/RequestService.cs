@@ -32,7 +32,7 @@ public class RequestService : IRequestService
   /// <summary>
   /// Send a Http Request 
   /// </summary>
-  /// <typeparam name="T">Api response will be serialied to T</typeparam>
+  /// <typeparam name="T">Api response will be serialized to T</typeparam>
   /// <param name="requestMessage">HttpRequestMessage we have created for our request</param>
   /// <returns> ReturnModel of T</returns>
   public async Task<ReturnModel<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
