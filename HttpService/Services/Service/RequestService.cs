@@ -9,10 +9,9 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Http;
 
 namespace HttpService.Service;
-public class RequestService : IRequestService
+public sealed class RequestService : IRequestService
 {
-
-
+  
   private readonly IHttpClientFactory _httpClientFactory;
   private readonly HttpClient _httpClient;
 
@@ -30,24 +29,25 @@ public class RequestService : IRequestService
   /// <returns> ResponseBase of T</returns>
   public async Task<ResponseBase<T>> SendRequestAsync<T>(HttpRequestMessage requestMessage)
   {
-    var request = await _httpClient.SendAsync(requestMessage,HttpCompletionOption.ResponseHeadersRead); 
-    request.EnsureSuccessStatusCode();
-    if (IsContentTypeValid(request.Content.Headers.ContentType))
+    HttpResponseMessage response = await _httpClient.SendAsync(requestMessage,HttpCompletionOption.ResponseHeadersRead); 
+    response.EnsureSuccessStatusCode();
+    if (IsContentTypeValid(response.Content.Headers.ContentType))
     {
-      var responseStream = await request.Content.ReadAsStreamAsync();
+      Stream responseStream = await response.Content.ReadAsStreamAsync();
       JsonSerializerOptions? options = new()
       {
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
       };
-      T responseData = JsonSerializer.Deserialize<T>(responseStream , options);
-      ResponseBase<T> ResponseBase = new(statusCode :request.StatusCode, data: responseData);
-      return ResponseBase;
+      
+      T? responseData = JsonSerializer.Deserialize<T>(responseStream , options);
+      ResponseBase<T> responseBase = new(statusCode :response.StatusCode, data: responseData);
+      return responseBase;
     }
     else
     {
-      ResponseBase<T> ResponseBase = new();
-      ResponseBase.UnSupportedMediaType();
-      return ResponseBase;
+      ResponseBase<T> responseBase = new();
+      responseBase.UnSupportedMediaType();
+      return responseBase;
     }
   }
 
@@ -101,8 +101,9 @@ public class RequestService : IRequestService
 
   private async Task<HttpRequestMessage> SetUpHttpRequest(string url,
                                                         HttpMethod httpMethod,
-                                                        Dictionary<string, string>? headers, object model,
-                                                        string mediaType = MediaTypes.UTF8Json)
+                                                        Dictionary<string, string>? headers,
+                                                        object? model,
+                                                        string mediaType = MediaTypes.Json)
   {
 
     
@@ -113,6 +114,7 @@ public class RequestService : IRequestService
     requestMessage.VersionPolicy = HttpVersionPolicy.RequestVersionOrHigher;
     requestMessage.Version = new Version(2, 1);
     requestMessage.Headers.Accept.Add(requestMediaType);
+    
     if (headers is not null)
     {
       headers = await headers.CheckHeadersAsync();
